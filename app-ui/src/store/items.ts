@@ -2,6 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import { useAuth } from "@/store/auth";
 import type { IResource } from "../../../shared/config";
+import {resourceNamePlural} from '../../../shared/config';
 
 export const useItems = defineStore("items", () => {
   const loading = ref(true);
@@ -11,7 +12,7 @@ export const useItems = defineStore("items", () => {
 
   function loadList() {
     loading.value = true;
-    fetch("/api/vms", {
+    fetch("/api/" + resourceNamePlural, {
       headers: { code },
     })
       .then((res) => res.json())
