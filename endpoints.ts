@@ -64,6 +64,24 @@ addEndpoint(apiPrefix, {
 });
 
 addEndpoint(apiPrefix + "/:" + routeParamKey, {
+  method: "GET",
+  async handler(req) {
+    // @ts-ignore
+    const userId = req.user._id as string;
+    // @ts-ignore
+    const resourceId = req.params[routeParamKey] as string;
+    const vms = await getList(userId);
+
+    const resource = vms.find(vm => vm._id === resourceId);
+
+    if (!resource) {
+      throw new ResponseError(resourceName + " not found", 404);
+    }
+    return getPublicData(resource);
+  }
+});
+
+addEndpoint(apiPrefix + "/:" + routeParamKey, {
   method: "DELETE",
   async handler(req) {
     // @ts-ignore
