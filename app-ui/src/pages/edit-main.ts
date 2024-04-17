@@ -1,11 +1,4 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
+import EditApp from '@/pages/EditApp.vue';
+import { createApp } from '@/services/vue-app';
 
-import "../assets/main.css";
-import EditApp from "@/pages/EditApp.vue";
-
-const app = createApp(EditApp);
-
-app.use(createPinia());
-
-app.mount("#app");
+createApp(EditApp)

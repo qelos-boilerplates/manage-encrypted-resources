@@ -1,5 +1,7 @@
 import {addMicroFrontend, addGroupedMicroFrontends} from '@qelos/plugin-play'
 import { resourceName, resourceNameCapitalized, resourceNamePlural, routeParamKey } from "./shared/config";
+import { NavBarPosition } from '@qelos/plugin-play/dist/micro-frontends';
+
 
 addMicroFrontend({
   name: 'Edit ' + resourceNameCapitalized,
@@ -28,7 +30,7 @@ addGroupedMicroFrontends({
     route: {
       name: resourceNamePlural,
       path: resourceNamePlural,
-      navBarPosition: 'top'
+      navBarPosition: NavBarPosition.TOP
     }
   },
   {
@@ -39,7 +41,7 @@ addGroupedMicroFrontends({
     route: {
       name: 'create-' + resourceName,
       path: 'create-' + resourceName,
-      navBarPosition: 'top'
+      navBarPosition: NavBarPosition.TOP
     }
   }
 ])
