@@ -17,12 +17,12 @@
     "build:cd": "npm i --all && (cd app-ui && npm i && npm run build) && npm i --production"
   },
   "dependencies": {
-    "@qelos/plugin-play": "^3.4.1",
-    "tsx": "^3.14.0",
+    "@qelos/plugin-play": "^3.8.3",
+    "tsx": "^4.19.4",
     "mongodb": "^5.9.2"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
-    "concurrently": "^8.2.2"
+    "@types/node": "^22.15.29",
+    "concurrently": "^9.1.2"
   }
 }
